@@ -6,12 +6,17 @@ function Skills() {
 
   // Liste de vos compétences avec niveaux
   const skills = [
-    { name: "HTML/CSS", level: 85, color: "#E34F26" },
-    { name: "JavaScript", level: 75, color: "#F7DF1E" },
-    { name: "React", level: 70, color: "#61DAFB" },
+    { name: "HTML/CSS", level: 90, color: "#E34F26" },
+    { name: "JavaScript", level: 70, color: "#F7DF1E" },
+    { name: "React", level: 45, color: "#61DAFB" },
     { name: "Node.js", level: 65, color: "#339933" },
-    { name: "Git/GitHub", level: 80, color: "#F05032" },
-    { name: "SQL", level: 60, color: "#4479A1" },
+    { name: "MYSQL", level: 60, color: "#4479A1" },
+    { name: "POSTGRESQL", level: 60, color: "#1369acff" },
+    { name: "PHP", level: 50, color: "#0ea753ff" },
+    { name: "PYTHON", level: 70, color: "#9c18d0ff" },
+    { name: "JAVA", level: 85, color: "#9f198bff" },
+    { name: "LARAVEL", level: 50, color: "#0a6432ff" },
+    { name: "FLASK", level: 55, color: "#af0cf0ff" },
   ];
 
   // Détection du scroll pour animation
@@ -60,7 +65,7 @@ function Skills() {
             textShadow: "0 0 20px rgba(139, 92, 246, 0.8)",
           }}
         >
-          🔎 MES COMPÉTENCES
+          🔎 MES SKILLS
         </h2>
         <div
           style={{
@@ -79,7 +84,7 @@ function Skills() {
             marginTop: "20px",
           }}
         >
-          Technologies et outils que je maîtrise
+          Technologies que je maîtrise
         </p>
       </div>
 
@@ -207,7 +212,7 @@ function Skills() {
             textShadow: "0 0 15px rgba(139, 92, 246, 0.6)",
           }}
         >
-          Autres Compétences
+          Outils utilisés et compétences complémentaires
         </h3>
         <div
           style={{
@@ -220,12 +225,13 @@ function Skills() {
           }}
         >
           {[
-            "Responsive Design",
-            "APIs REST",
-            "Figma",
-            "Tailwind CSS",
-            "MongoDB",
+            "Windows/Linux",
+            "Git/GitHub/GitLab",
+            "IntelliJ IDEA",
+            "PHPStorm",
             "VS Code",
+            "Réseaux",
+            "Méthodes Agiles",
           ].map((item, index) => (
             <div
               key={index}
@@ -235,7 +241,7 @@ function Skills() {
                 border: "1px solid rgba(139, 92, 246, 0.4)",
                 borderRadius: "25px",
                 color: "#E5E7EB",
-                fontSize: "1rem", // ← CETTE LIGNE DOIT ÊTRE COMPLÈTE
+                fontSize: "1rem",
                 fontWeight: "500",
                 transition: "all 0.3s",
                 cursor: "default",
