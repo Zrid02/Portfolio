@@ -1,6 +1,9 @@
+import { useNavigate } from "react-router-dom";
 import TypingText from "./TypingText";
 
 function Hero() {
+  const navigate = useNavigate();
+
   return (
     <section
       style={{
@@ -30,6 +33,7 @@ function Hero() {
 
       {/* Titre avec effet typing */}
       <TypingText text="DÉVELOPPEUR WEB ET APPLICATION" speed={150} />
+
       {/* Sous-titre mystique */}
       <p
         style={{
@@ -72,7 +76,7 @@ function Hero() {
         }}
       ></div>
 
-      {/* Boutons futuristes */}
+      {/* Boutons futuristes avec navigation */}
       <div
         style={{
           display: "flex",
@@ -82,6 +86,7 @@ function Hero() {
         }}
       >
         <button
+          onClick={() => navigate("/skills")}
           onMouseEnter={(e) => {
             e.target.style.transform = "translateY(-5px) scale(1.05)";
             e.target.style.boxShadow = "0 10px 40px rgba(139, 92, 246, 0.6)";
@@ -109,6 +114,7 @@ function Hero() {
         </button>
 
         <button
+          onClick={() => navigate("/contact")}
           onMouseEnter={(e) => {
             e.target.style.background = "rgba(139, 92, 246, 0.2)";
             e.target.style.borderColor = "#8B5CF6";
