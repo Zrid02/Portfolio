@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom"; // On n'importe plus 'BrowserRouter' ni 'Router'
 import "./App.css";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
@@ -10,20 +10,19 @@ import About from "./components/About";
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <Particles />
-        <Header />
-        <Routes>
-          <Route path="/" element={<Hero />} />
-          <Route path="/accueil" element={<Hero />} />
-          <Route path="/a-propos" element={<About />} />
-          <Route path="/skills" element={<Skills />} />
-          <Route path="/projets" element={<Projects />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-      </div>
-    </Router>
+    // On a supprimé la balise <Router> qui entourait tout
+    <div className="App">
+      <Particles />
+      <Header />
+      <Routes>
+        <Route path="/" element={<Hero />} />
+        <Route path="/accueil" element={<Hero />} />
+        <Route path="/a-propos" element={<About />} />
+        <Route path="/skills" element={<Skills />} />
+        <Route path="/projets" element={<Projects />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </div>
   );
 }
 
