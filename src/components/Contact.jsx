@@ -7,17 +7,60 @@ function Contact() {
     message: "",
   });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Formulaire envoyé:", formData);
-    alert("Message envoyé ! (fonctionnalité à configurer)");
-  };
+  const [consent, setConsent] = useState(false); // État RGPD
+  const [isSending, setIsSending] = useState(false); // État chargement
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!consent) {
+      alert(
+        "Veuillez accepter la politique de confidentialité (RGPD) pour envoyer ce message."
+      );
+      return;
+    }
+
+    setIsSending(true);
+
+    const YOUR_EMAIL = "nessim.rabhi1402@gmail.com";
+
+    try {
+      const response = await fetch(`https://formsubmit.co/ajax/${YOUR_EMAIL}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          _subject: `Nouveau message de ${formData.name} (Portfolio)`, // Sujet du mail
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data.success === "true" || response.ok) {
+        alert("Message envoyé avec succès !");
+        setFormData({ name: "", email: "", message: "" });
+        setConsent(false);
+      } else {
+        alert("Une erreur est survenue. Veuillez réessayer.");
+      }
+    } catch (error) {
+      console.error("Erreur:", error);
+      alert("Erreur de connexion. Vérifiez votre internet.");
+    } finally {
+      setIsSending(false);
+    }
   };
 
   return (
@@ -58,14 +101,8 @@ function Contact() {
             boxShadow: "0 0 20px rgba(139, 92, 246, 0.6)",
           }}
         ></div>
-        <p
-          style={{
-            fontSize: "1.2rem",
-            color: "#9CA3AF",
-            marginTop: "20px",
-          }}
-        >
-          N'hésitez pas à me contacter pour vos projets
+        <p style={{ fontSize: "1.2rem", color: "#9CA3AF", marginTop: "20px" }}>
+          N'hésitez pas à me contacter pour toute opportunité !
         </p>
       </div>
 
@@ -163,7 +200,7 @@ function Contact() {
         </div>
 
         {/* Message */}
-        <div style={{ marginBottom: "30px" }}>
+        <div style={{ marginBottom: "20px" }}>
           <label
             style={{
               display: "block",
@@ -203,45 +240,84 @@ function Contact() {
           />
         </div>
 
+        {/* Checkbox RGPD */}
+        <div
+          style={{
+            marginBottom: "30px",
+            display: "flex",
+            alignItems: "flex-start",
+            gap: "10px",
+          }}
+        >
+          <input
+            type="checkbox"
+            id="rgpdConsent"
+            checked={consent}
+            onChange={(e) => setConsent(e.target.checked)}
+            style={{
+              marginTop: "5px",
+              cursor: "pointer",
+              accentColor: "#8B5CF6",
+              width: "18px",
+              height: "18px",
+            }}
+          />
+          <label
+            htmlFor="rgpdConsent"
+            style={{
+              color: "#9CA3AF",
+              fontSize: "0.9rem",
+              cursor: "pointer",
+              lineHeight: "1.4",
+            }}
+          >
+            J'accepte que mes données soient traitées pour me recontacter.
+          </label>
+        </div>
+
         {/* Bouton */}
         <button
           type="submit"
+          disabled={isSending}
           onMouseEnter={(e) => {
-            e.target.style.transform = "translateY(-3px)";
-            e.target.style.boxShadow = "0 10px 30px rgba(139, 92, 246, 0.6)";
+            if (!isSending) {
+              e.target.style.transform = "translateY(-3px)";
+              e.target.style.boxShadow = "0 10px 30px rgba(139, 92, 246, 0.6)";
+            }
           }}
           onMouseLeave={(e) => {
-            e.target.style.transform = "translateY(0)";
-            e.target.style.boxShadow = "0 4px 20px rgba(139, 92, 246, 0.4)";
+            if (!isSending) {
+              e.target.style.transform = "translateY(0)";
+              e.target.style.boxShadow = "0 4px 20px rgba(139, 92, 246, 0.4)";
+            }
           }}
           style={{
             width: "100%",
             padding: "18px",
-            background: "linear-gradient(135deg, #8B5CF6, #6D28D9)",
+            background: isSending
+              ? "#6B7280"
+              : "linear-gradient(135deg, #8B5CF6, #6D28D9)",
             color: "white",
             border: "none",
             borderRadius: "8px",
             fontSize: "1.1rem",
             fontWeight: "600",
-            cursor: "pointer",
+            cursor: isSending ? "not-allowed" : "pointer",
             boxShadow: "0 4px 20px rgba(139, 92, 246, 0.4)",
             transition: "all 0.3s",
             letterSpacing: "1px",
             textTransform: "uppercase",
+            opacity: isSending ? 0.7 : 1,
           }}
         >
-          📤 Envoyer
+          {isSending ? "Envoi..." : "Envoyer"}
         </button>
       </form>
 
-      {/* Réseaux sociaux */}
+      {/* Réseaux sociaux (inchangé) */}
       <div style={{ marginTop: "60px", textAlign: "center" }}>
         <h3
-          style={{
-            fontSize: "1.5rem",
-            color: "#8B5CF6",
-            marginBottom: "20px",
-          }}
+          style={{ fontSize: "1.5rem", color: "#8B5CF6", marginBottom: "20px" }}
         >
           Ou retrouvez-moi sur
         </h3>
@@ -259,15 +335,6 @@ function Contact() {
               href={social.link}
               target="_blank"
               rel="noopener noreferrer"
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = "translateY(-5px) scale(1.1)";
-                e.currentTarget.style.boxShadow =
-                  "0 5px 20px rgba(139, 92, 246, 0.5)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = "translateY(0) scale(1)";
-                e.currentTarget.style.boxShadow = "none";
-              }}
               style={{
                 display: "inline-flex",
                 alignItems: "center",
@@ -280,6 +347,7 @@ function Contact() {
                 fontSize: "1.8rem",
                 textDecoration: "none",
                 transition: "all 0.3s",
+                color: "#E5E7EB",
               }}
             >
               {social.icon}
