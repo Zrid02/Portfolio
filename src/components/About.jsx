@@ -60,31 +60,7 @@ function About() {
           <span style={{ color: "#8B5CF6", fontWeight: "700" }}>
             Nessim Rabhi
           </span>
-          , développeur web et application passionné par la création
-          d'expériences numériques innovantes.
-        </p>
-
-        <p
-          style={{
-            fontSize: "1.2rem",
-            color: "#9CA3AF",
-            lineHeight: "1.8",
-            marginBottom: "30px",
-            textAlign: "justify",
-          }}
-        >
-          jdezij
-        </p>
-
-        <p
-          style={{
-            fontSize: "1.2rem",
-            color: "#9CA3AF",
-            lineHeight: "1.8",
-            textAlign: "justify",
-          }}
-        >
-          llkl
+          , développeur web et application passionné par la création numérique.
         </p>
 
         {/* Parcours */}
@@ -107,7 +83,7 @@ function About() {
             }}
           >
             {[
-              "🎓 Formation en développement",
+              "🎓 Formation en développement, base de données et réseau",
               "💻 Expérience avec Python, Java, Php, React, Html/Css/JavaScript",
               "🚀 Création de projets personnels",
             ].map((item, index) => (
@@ -127,6 +103,90 @@ function About() {
               </li>
             ))}
           </ul>
+        </div>
+
+        {/* Boutons CV */}
+        <div
+          style={{
+            marginTop: "50px",
+            display: "flex",
+            gap: "20px",
+            justifyContent: "center",
+            flexWrap: "wrap",
+          }}
+        >
+          {/* Bouton Voir le CV */}
+          <a
+            href="/CV-Nessim-Rabhi.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "translateY(-5px)";
+              e.currentTarget.style.boxShadow =
+                "0 10px 40px rgba(139, 92, 246, 0.6)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "translateY(0)";
+              e.currentTarget.style.boxShadow =
+                "0 4px 20px rgba(139, 92, 246, 0.4)";
+            }}
+            style={{
+              padding: "18px 40px",
+              background: "linear-gradient(135deg, #8B5CF6, #6D28D9)",
+              color: "white",
+              border: "none",
+              borderRadius: "8px",
+              fontSize: "1.1rem",
+              fontWeight: "600",
+              cursor: "pointer",
+              boxShadow: "0 4px 20px rgba(139, 92, 246, 0.4)",
+              transition: "all 0.3s",
+              letterSpacing: "1px",
+              textTransform: "uppercase",
+              textDecoration: "none",
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "10px",
+            }}
+          >
+            👁️ Voir mon CV
+          </a>
+
+          {/* Bouton Télécharger le CV */}
+          <a
+            href="/cv.pdf"
+            download="CV-Nessim-Rabhi.pdf"
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = "rgba(139, 92, 246, 0.2)";
+              e.currentTarget.style.borderColor = "#8B5CF6";
+              e.currentTarget.style.boxShadow =
+                "0 0 20px rgba(139, 92, 246, 0.4)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = "transparent";
+              e.currentTarget.style.borderColor = "#8B5CF6";
+              e.currentTarget.style.boxShadow = "none";
+            }}
+            style={{
+              padding: "18px 40px",
+              background: "transparent",
+              color: "#8B5CF6",
+              border: "2px solid #8B5CF6",
+              borderRadius: "8px",
+              fontSize: "1.1rem",
+              fontWeight: "600",
+              cursor: "pointer",
+              transition: "all 0.3s",
+              letterSpacing: "1px",
+              textTransform: "uppercase",
+              textDecoration: "none",
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "10px",
+            }}
+          >
+            📥 Télécharger le CV
+          </a>
         </div>
       </div>
     </section>
