@@ -18,7 +18,7 @@ function Projects() {
       title: "Pacman",
       description: "Creation d'un jeu Pacman",
       technologies: ["Java", "JavaFX", "Gradle"],
-      image: import.meta.env.BASE_URL + "pacman.png",
+      image: import.meta.env.BASE_URL + "Pacman.png",
       mediaType: "video",
       media: import.meta.env.BASE_URL + "videos/pacman.mp4",
       github: "https://github.com/Zrid02/Pacman",
@@ -41,7 +41,7 @@ function Projects() {
       description:
         "Site de divertissement donc le but est de deviner un personnage",
       technologies: ["HTML", "CSS", "JavaScript", "JSON"],
-      image: import.meta.env.BASE_URL + "solodle.png",
+      image: import.meta.env.BASE_URL + "SoloDle.png",
       github: "https://github.com/Zrid02/SoloDle",
       demo: "https://zrid02.github.io/SoloDle",
       status: "Terminé",
