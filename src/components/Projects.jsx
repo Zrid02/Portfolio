@@ -4,14 +4,13 @@ function Projects() {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
 
-  // Vos projets (à personnaliser)
   const projects = [
     {
       title: "Portfolio Personnel",
       description: "Un portfolio moderne avec React et animations",
       technologies: ["React", "CSS", "JavaScript"],
-      image: "/public/Portfolio-page-accueil.png",
-      github: "https://github.com/votre-username/projet1",
+      image: process.env.PUBLIC_URL + "/Portfolio-page-accueil.png",
+      github: "https://github.com/Zrid02/Portfolio",
       demo: null,
       status: "Terminé",
     },
@@ -19,11 +18,11 @@ function Projects() {
       title: "Pacman",
       description: "Creation d'un jeu Pacman",
       technologies: ["Java", "JavaFX", "Gradle"],
-      image: "/public/pacman.png",
+      image: process.env.PUBLIC_URL + "/pacman.png",
       mediaType: "video",
-      media: "/videos/synthetiseur-demo.mp4",
-      github: "https://github.com/votre-username/projet2",
-      demo: null, // pas de demo pour ce projet pour l'instant
+      media: process.env.PUBLIC_URL + "/videos/pacman.mp4",
+      github: "https://github.com/Zrid02/Pacman",
+      demo: null,
       status: "En cours",
     },
     {
@@ -31,8 +30,8 @@ function Projects() {
       description: "Creation d'un synthétiseur de musique",
       technologies: ["Java"],
       mediaType: "video",
-      image: "/public/LenSymphony.png",
-      media: "/videos/synthetiseur-demo.mp4",
+      image: process.env.PUBLIC_URL + "/LenSymphony.png",
+      media: process.env.PUBLIC_URL + "/videos/synthetiseur-demo.mp4",
       github: "https://github.com/Zrid02/LenSymphony",
       demo: null,
       status: "Terminé",
@@ -42,14 +41,13 @@ function Projects() {
       description:
         "Site de divertissement donc le but est de deviner un personnage",
       technologies: ["HTML", "CSS", "JavaScript", "JSON"],
-      image: "/public/solodle.png",
+      image: process.env.PUBLIC_URL + "/solodle.png",
       github: "https://github.com/Zrid02/SoloDle",
       demo: "https://zrid02.github.io/SoloDle",
       status: "Terminé",
     },
   ];
 
-  // Détection du scroll
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
