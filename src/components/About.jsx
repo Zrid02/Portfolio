@@ -1,4 +1,7 @@
 function About() {
+  // Définis le nom exact de ton fichier ici pour ne pas te tromper
+  const nomFichierCV = "CV-Nessim-Rabhi.pdf";
+
   return (
     <section
       style={{
@@ -117,7 +120,8 @@ function About() {
         >
           {/* Bouton Voir le CV */}
           <a
-            href="/CV-Nessim-Rabhi.pdf"
+            // 👇 CORRECTION ICI
+            href={import.meta.env.BASE_URL + nomFichierCV}
             target="_blank"
             rel="noopener noreferrer"
             onMouseEnter={(e) => {
@@ -154,8 +158,9 @@ function About() {
 
           {/* Bouton Télécharger le CV */}
           <a
-            href="/cv.pdf"
-            download="CV-Nessim-Rabhi.pdf"
+            // 👇 CORRECTION ICI
+            href={import.meta.env.BASE_URL + nomFichierCV}
+            download={nomFichierCV}
             onMouseEnter={(e) => {
               e.currentTarget.style.background = "rgba(139, 92, 246, 0.2)";
               e.currentTarget.style.borderColor = "#8B5CF6";
