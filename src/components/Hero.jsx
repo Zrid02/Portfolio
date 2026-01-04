@@ -18,7 +18,6 @@ function Hero() {
         zIndex: 1,
       }}
     >
-      {/* Effet de glow derrière le titre */}
       <div
         style={{
           position: "absolute",
@@ -31,10 +30,8 @@ function Hero() {
         }}
       ></div>
 
-      {/* Titre avec effet typing */}
       <TypingText text="DÉVELOPPEUR WEB ET APPLICATION" speed={150} />
 
-      {/* Sous-titre mystique */}
       <p
         style={{
           fontSize: "1.5rem",
@@ -49,22 +46,21 @@ function Hero() {
         Nessim Rabhi
       </p>
 
-      {/* Description */}
       <p
         style={{
-          fontSize: "1.2rem",
-          color: "#9CA3AF",
-          marginBottom: "50px",
-          fontWeight: "400",
-          maxWidth: "700px",
-          lineHeight: "1.8",
+          fontSize: "1.5rem",
+          color: "#E5E7EB",
+          marginBottom: "40px",
+          maxWidth: "600px",
+          lineHeight: "1.6",
         }}
       >
-        Transformant les idées en réalité numérique, <br />
-        Un développeur qui s'élève au-delà des limites
+        Développeur Web & Application <br />
+        <span style={{ color: "#9CA3AF", fontSize: "1.2rem" }}>
+          J'apprends, je code et je crée
+        </span>
       </p>
 
-      {/* Ligne de séparation lumineuse */}
       <div
         style={{
           width: "300px",
@@ -76,7 +72,6 @@ function Hero() {
         }}
       ></div>
 
-      {/* Boutons futuristes avec navigation */}
       <div
         style={{
           display: "flex",
@@ -143,7 +138,6 @@ function Hero() {
         </button>
       </div>
 
-      {/* Stats style Solo Leveling */}
       <div
         style={{
           marginTop: "80px",
