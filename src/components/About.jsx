@@ -1,4 +1,6 @@
 function About() {
+  const nomFichierCV = "CV-Nessim-Rabhi.pdf";
+
   return (
     <section
       style={{
@@ -8,7 +10,6 @@ function About() {
         zIndex: 1,
       }}
     >
-      {/* Titre */}
       <div style={{ textAlign: "center", marginBottom: "60px" }}>
         <h2
           style={{
@@ -35,7 +36,6 @@ function About() {
         ></div>
       </div>
 
-      {/* Contenu */}
       <div
         style={{
           maxWidth: "900px",
@@ -60,10 +60,11 @@ function About() {
           <span style={{ color: "#8B5CF6", fontWeight: "700" }}>
             Nessim Rabhi
           </span>
-          , développeur web et application passionné par la création numérique.
+          , développeur web et application. Passionné par l'informatique, j'aime
+          écrire du code à partir de mes idées. Toujours curieux et rigoureux,
+          je cherche constamment à apprendre et progresser.
         </p>
 
-        {/* Parcours */}
         <div style={{ marginTop: "50px" }}>
           <h3
             style={{
@@ -83,7 +84,7 @@ function About() {
             }}
           >
             {[
-              "🎓 Formation en développement, base de données et réseau",
+              "🎓 Formation en développement web et application, base de données et réseau a l'IUT de Lens",
               "💻 Expérience avec Python, Java, Php, React, Html/Css/JavaScript",
               "🚀 Création de projets personnels",
             ].map((item, index) => (
@@ -105,7 +106,6 @@ function About() {
           </ul>
         </div>
 
-        {/* Boutons CV */}
         <div
           style={{
             marginTop: "50px",
@@ -115,9 +115,8 @@ function About() {
             flexWrap: "wrap",
           }}
         >
-          {/* Bouton Voir le CV */}
           <a
-            href="/CV-Nessim-Rabhi.pdf"
+            href={import.meta.env.BASE_URL + nomFichierCV}
             target="_blank"
             rel="noopener noreferrer"
             onMouseEnter={(e) => {
@@ -152,10 +151,9 @@ function About() {
             👁️ Voir mon CV
           </a>
 
-          {/* Bouton Télécharger le CV */}
           <a
-            href="/cv.pdf"
-            download="CV-Nessim-Rabhi.pdf"
+            href={import.meta.env.BASE_URL + nomFichierCV}
+            download={nomFichierCV}
             onMouseEnter={(e) => {
               e.currentTarget.style.background = "rgba(139, 92, 246, 0.2)";
               e.currentTarget.style.borderColor = "#8B5CF6";
