@@ -238,6 +238,8 @@ function Skills() {
             "VS Code",
             "Réseaux",
             "Méthodes Agiles",
+            "Docker,Podman",
+            "Arduino",
           ].map((item, index) => (
             <div
               key={index}
