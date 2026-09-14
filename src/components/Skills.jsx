@@ -7,16 +7,22 @@ function Skills() {
   // Liste de vos compétences avec niveaux
   const skills = [
     { name: "HTML/CSS", level: 90, color: "#E34F26" },
-    { name: "JavaScript", level: 70, color: "#F7DF1E" },
-    { name: "React", level: 45, color: "#61DAFB" },
-    { name: "Node.js", level: 65, color: "#339933" },
-    { name: "MYSQL", level: 60, color: "#4479A1" },
+    { name: "JAVASCRIPT", level: 70, color: "#F7DF1E" },
+    { name: "TYPESCRIPT", level: 80, color: "#3178c6ff" },
+    { name: "REACT", level: 80, color: "#61DAFB" },
+    { name: "NEXT.JS", level: 75, color: "#000000" },
+    { name: "NODE.JS", level: 65, color: "#339933" },
+    { name: "NEST.JS", level: 70, color: "#e0234eff" },
+    { name: "MONGODB", level: 50, color: "#4479A1" },
     { name: "POSTGRESQL", level: 60, color: "#1369acff" },
     { name: "PHP", level: 50, color: "#0ea753ff" },
-    { name: "PYTHON", level: 70, color: "#9c18d0ff" },
-    { name: "JAVA", level: 85, color: "#9f198bff" },
     { name: "LARAVEL", level: 50, color: "#0a6432ff" },
+    { name: "PYTHON", level: 70, color: "#9c18d0ff" },
     { name: "FLASK", level: 55, color: "#af0cf0ff" },
+    { name: "JAVA", level: 85, color: "#9f198bff" },
+    { name: "SPRING", level: 50, color: "#6db33fff" },
+    { name: "C++", level: 50, color: "#00599cff" },
+    { name: "C#", level: 50, color: "#68217aff" },
   ];
 
   // Détection du scroll pour animation
@@ -27,7 +33,7 @@ function Skills() {
           setIsVisible(true);
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.2 },
     );
 
     if (sectionRef.current) {
