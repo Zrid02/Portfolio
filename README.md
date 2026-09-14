@@ -1,16 +1,33 @@
-# React + Vite
+# 🌟 Portfolio - Nessim Rabhi
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Portfolio Banner](https://img.shields.io/badge/React-19.1.1-61DAFB?style=for-the-badge&logo=react&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-7.1.7-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![React Router](https://img.shields.io/badge/React_Router-6.22.0-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
 
-Currently, two official plugins are available:
+Portfolio personnel moderne et futuriste inspiré de l'esthétique Solo Leveling, développé avec React et Vite.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Démo
 
-## React Compiler
+🔗 [Voir le portfolio en ligne](https://zrid02.github.io/Portfolio)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Fonctionnalités
 
-## Expanding the ESLint configuration
+- 🎨 **Design Futuriste** - Interface inspirée de Solo Leveling avec effets de particules et animations
+- 📱 **Responsive** - Adapté à tous les types d'écrans
+- 🧭 **Navigation Multi-Pages** - Utilisation de React Router pour une navigation fluide
+- ⚡ **Performances Optimales** - Construit avec Vite pour des temps de chargement rapides
+- 🎭 **Animations Dynamiques** - Effets de typing, hover et transitions fluides
+- 🎯 **Sections Complètes** - Accueil, À Propos, Compétences, Projets, Contact
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Technologies Utilisées
+
+### Frontend
+
+- **React** 19.1.1 - Bibliothèque JavaScript pour l'interface utilisateur
+- **React Router DOM** 6.22.0 - Navigation côté client
+- **Vite** 7.1.7 - Build tool et dev server ultra-rapide
+
+### Développement
+
+- **ESLint** - Linting du code
+- **CSS personnalisé** - Styled avec des gradients et effets futuristes

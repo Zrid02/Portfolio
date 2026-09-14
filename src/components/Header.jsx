@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Header() {
   return (
     <header
@@ -16,18 +18,20 @@ function Header() {
       }}
     >
       {/* Logo avec effet glow */}
-      <div
-        style={{
-          fontSize: "1.5rem",
-          fontWeight: "700",
-          color: "#8B5CF6",
-          textShadow:
-            "0 0 20px rgba(139, 92, 246, 0.8), 0 0 40px rgba(139, 92, 246, 0.4)",
-          letterSpacing: "2px",
-        }}
-      >
-        {/* Logo ou autre pour mon Portfolio */}
-      </div>
+      <Link to="/" style={{ textDecoration: "none" }}>
+        <div
+          style={{
+            fontSize: "1.5rem",
+            fontWeight: "700",
+            color: "#8B5CF6",
+            textShadow:
+              "0 0 20px rgba(139, 92, 246, 0.8), 0 0 40px rgba(139, 92, 246, 0.4)",
+            letterSpacing: "2px",
+          }}
+        >
+          NR Portfolio
+        </div>
+      </Link>
 
       {/* Navigation */}
       <nav>
@@ -38,10 +42,15 @@ function Header() {
             listStyle: "none",
           }}
         >
-          {["Accueil", "À Propos", "Projets", "Contact"].map((item) => (
-            <li key={item}>
-              <a
-                href={`#${item.toLowerCase()}`}
+          {[
+            { name: "Accueil", path: "/accueil" },
+            { name: "À Propos", path: "/a-propos" },
+            { name: "Projets", path: "/projets" },
+            { name: "Contact", path: "/contact" },
+          ].map((item) => (
+            <li key={item.name}>
+              <Link
+                to={item.path}
                 onMouseEnter={(e) => {
                   e.target.style.color = "#8B5CF6";
                   e.target.style.textShadow =
@@ -59,8 +68,8 @@ function Header() {
                   letterSpacing: "1px",
                 }}
               >
-                {item}
-              </a>
+                {item.name}
+              </Link>
             </li>
           ))}
         </ul>

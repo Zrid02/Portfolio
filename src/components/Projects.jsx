@@ -4,34 +4,33 @@ function Projects() {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
 
-  // Vos projets (à personnaliser)
   const projects = [
     {
       title: "Portfolio Personnel",
       description: "Un portfolio moderne avec React et animations",
       technologies: ["React", "CSS", "JavaScript"],
-      image: "https://via.placeholder.com/400x250/8B5CF6/FFFFFF?text=Projet+1",
-      github: "https://github.com/votre-username/projet1",
-      demo: "https://votre-demo.com",
+      image: import.meta.env.BASE_URL + "Portfolio-page-accueil.png",
+      github: "https://github.com/Zrid02/Portfolio",
+      demo: null,
       status: "Terminé",
     },
     {
       title: "Pacman",
-      description: "Site e-commerce avec panier et paiement",
-      technologies: ["React", "Node.js", "MongoDB"],
-      mediaType: "video",
-      media: "/videos/synthetiseur-demo.mp4",
-      github: "https://github.com/votre-username/projet2",
-      demo: null, // pas de demo pour ce projet
-      status: "En cours",
+      description: "Creation d'un jeu Pacman",
+      technologies: ["Java", "JavaFX", "Gradle"],
+      image: import.meta.env.BASE_URL + "Pacman.png",
+      github: null,
+      demo: null,
+      status: "Terminé",
     },
     {
       title: "Synthétiseur de Musique",
-      description: "API pour gestion de tâches avec authentification",
-      technologies: ["Node.js", "Express", "JWT"],
+      description: "Creation d'un synthétiseur de musique",
+      technologies: ["Java"],
       mediaType: "video",
-      media: "/videos/synthetiseur-demo.mp4",
-      github: "https://github.com/votre-username/projet3",
+      image: import.meta.env.BASE_URL + "LenSymphony.png",
+      media: import.meta.env.BASE_URL + "videos/synthetiseur-demo.mp4",
+      github: "https://github.com/Zrid02/LenSymphony",
       demo: null,
       status: "Terminé",
     },
@@ -40,14 +39,31 @@ function Projects() {
       description:
         "Site de divertissement donc le but est de deviner un personnage",
       technologies: ["HTML", "CSS", "JavaScript", "JSON"],
-      image: "/public/solodle.png",
+      image: import.meta.env.BASE_URL + "SoloDle.png",
       github: "https://github.com/Zrid02/SoloDle",
       demo: "https://zrid02.github.io/SoloDle",
       status: "Terminé",
     },
+    {
+      title: "Cinehub",
+      description:
+        "Site de film pour juger et noter des films, avec authentification et base de données",
+      technologies: ["Php", "Tailwind", "Laravel", "sqLite"],
+      image: import.meta.env.BASE_URL + "Cinehub.png",
+      github: null,
+      status: "Terminé",
+    },
+    {
+      title: "Marathon 2025",
+      description:
+        "Site de musique sur le theme de bollywood afin de juger des musiques , de laisser des commentaires",
+      technologies: ["Php", "CSS", "Laravel", "sqLite"],
+      image: import.meta.env.BASE_URL + "Marathon.png",
+      github: null,
+      status: "Terminé",
+    },
   ];
 
-  // Détection du scroll
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -252,36 +268,45 @@ function Projects() {
               </div>
 
               {/* Boutons */}
-              <div style={{ display: "flex", gap: "15px" }}>
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    flex: 1,
-                    padding: "12px",
-                    background: "linear-gradient(135deg, #8B5CF6, #6D28D9)",
-                    color: "white",
-                    textAlign: "center",
-                    borderRadius: "8px",
-                    textDecoration: "none",
-                    fontWeight: "600",
-                    fontSize: "0.95rem",
-                    transition: "all 0.3s",
-                    border: "none",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.target.style.transform = "translateY(-3px)";
-                    e.target.style.boxShadow =
-                      "0 5px 20px rgba(139, 92, 246, 0.5)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.target.style.transform = "translateY(0)";
-                    e.target.style.boxShadow = "none";
-                  }}
-                >
-                  🔗 GitHub
-                </a>
+              <div
+                style={{
+                  display: "flex",
+                  gap: "15px",
+                  justifyContent: "center",
+                  marginTop: "auto",
+                }}
+              >
+                {project.github && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      minWidth: "150px",
+                      padding: "12px 25px",
+                      background: "linear-gradient(135deg, #8B5CF6, #6D28D9)",
+                      color: "white",
+                      textAlign: "center",
+                      borderRadius: "8px",
+                      textDecoration: "none",
+                      fontWeight: "600",
+                      fontSize: "0.95rem",
+                      transition: "all 0.3s",
+                      border: "none",
+                    }}
+                    onMouseEnter={(e) => {
+                      e.target.style.transform = "translateY(-3px)";
+                      e.target.style.boxShadow =
+                        "0 5px 20px rgba(139, 92, 246, 0.5)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.target.style.transform = "translateY(0)";
+                      e.target.style.boxShadow = "none";
+                    }}
+                  >
+                    🔗 GitHub
+                  </a>
+                )}
 
                 {project.demo && (
                   <a
@@ -289,8 +314,8 @@ function Projects() {
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{
-                      flex: 1,
-                      padding: "12px",
+                      minWidth: "150px",
+                      padding: "12px 25px",
                       background: "transparent",
                       color: "#8B5CF6",
                       border: "2px solid #8B5CF6",
