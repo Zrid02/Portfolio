@@ -22,7 +22,7 @@ function About() {
             textShadow: "0 0 20px rgba(139, 92, 246, 0.8)",
           }}
         >
-          👤 À PROPOS
+          À PROPOS
         </h2>
         <div
           style={{
@@ -75,7 +75,7 @@ function About() {
               textShadow: "0 0 15px rgba(139, 92, 246, 0.6)",
             }}
           >
-            📚 Mon Parcours
+            Mon Parcours
           </h3>
           <ul
             style={{
@@ -84,9 +84,9 @@ function About() {
             }}
           >
             {[
-              "🎓 Formation en développement web et application, base de données et réseau a l'IUT de Lens",
-              "💻 Expérience avec Python, Java, Php, React, Html/Css/JavaScript",
-              "🚀 Création de projets personnels",
+              " Formation en développement web et application, base de données et réseau a l'IUT de Lens",
+              " Expérience avec Python, Java, Php, React, Html/Css/JavaScript",
+              " Création de projets personnels",
             ].map((item, index) => (
               <li
                 key={index}
@@ -148,7 +148,7 @@ function About() {
               gap: "10px",
             }}
           >
-            👁️ Voir mon CV
+            Voir mon CV
           </a>
 
           <a
@@ -183,7 +183,7 @@ function About() {
               gap: "10px",
             }}
           >
-            📥 Télécharger le CV
+            Télécharger le CV
           </a>
         </div>
       </div>

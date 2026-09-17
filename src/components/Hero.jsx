@@ -105,7 +105,7 @@ function Hero() {
             textTransform: "uppercase",
           }}
         >
-          🔎 Voir mes skills
+          Voir mes skills
         </button>
 
         <button
@@ -134,7 +134,7 @@ function Hero() {
             textTransform: "uppercase",
           }}
         >
-          💬 Me Contacter
+          Me Contacter
         </button>
       </div>
 
