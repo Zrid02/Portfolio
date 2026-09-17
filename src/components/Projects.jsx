@@ -71,7 +71,7 @@ function Projects() {
           setIsVisible(true);
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     if (sectionRef.current) {
@@ -109,7 +109,7 @@ function Projects() {
             textShadow: "0 0 20px rgba(139, 92, 246, 0.8)",
           }}
         >
-          ⚔️ MES PROJETS
+          MES PROJETS
         </h2>
         <div
           style={{
@@ -304,7 +304,7 @@ function Projects() {
                       e.target.style.boxShadow = "none";
                     }}
                   >
-                    🔗 GitHub
+                    GitHub
                   </a>
                 )}
 
@@ -337,7 +337,7 @@ function Projects() {
                       e.target.style.transform = "translateY(0)";
                     }}
                   >
-                    🚀 Demo
+                    Demo
                   </a>
                 )}
               </div>

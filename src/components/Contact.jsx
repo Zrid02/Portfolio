@@ -22,7 +22,7 @@ function Contact() {
 
     if (!consent) {
       alert(
-        "Veuillez accepter la politique de confidentialité (RGPD) pour envoyer ce message."
+        "Veuillez accepter la politique de confidentialité (RGPD) pour envoyer ce message.",
       );
       return;
     }
@@ -89,7 +89,7 @@ function Contact() {
             textShadow: "0 0 20px rgba(139, 92, 246, 0.8)",
           }}
         >
-          💬 ME CONTACTER
+          ME CONTACTER
         </h2>
         <div
           style={{

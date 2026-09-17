@@ -4,7 +4,6 @@ function Skills() {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
 
-  // Liste de vos compétences avec niveaux
   const skills = [
     { name: "HTML/CSS", level: 90, color: "#E34F26" },
     { name: "JAVASCRIPT", level: 70, color: "#F7DF1E" },
@@ -71,7 +70,7 @@ function Skills() {
             textShadow: "0 0 20px rgba(139, 92, 246, 0.8)",
           }}
         >
-          🔎 MES SKILLS
+          MES SKILLS
         </h2>
         <div
           style={{
